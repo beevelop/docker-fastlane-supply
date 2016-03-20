@@ -5,7 +5,7 @@
 ![Badges](https://shields.beevelop.com/badge/badges-6-brightgreen.svg?style=flat-square)
 [![Beevelop](https://links.beevelop.com/honey-badge)](https://beevelop.com)
 
-> :attention: This image is still WIP and not battle-tested **yet**.
+> :warning: This image is still WIP and not battle-tested **yet**.
 
 # Supply (Fastlane) for Docker :whale:
 ----
