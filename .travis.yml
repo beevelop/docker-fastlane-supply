@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t supply .
+  - docker run supply sh -c "supply -v"
+  - docker run supply sh -c "supply --help"
