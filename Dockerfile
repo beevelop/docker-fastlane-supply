@@ -1,8 +1,13 @@
-FROM beevelop/ruby:2.2
+FROM alpine:3.3
+
+MAINTAINER Maik Hummel <m@ikhummel.com>
 
 ENV SUPPLY_VERSION=0.5.2
 
-RUN apt-get -qq update && apt-get -qq install -y less && \
-    gem install supply:$SUPPLY_VERSION && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    apt-get autoremove -y && apt-get clean
+RUN DEPS='ruby-dev make gcc musl-dev ruby-rdoc ruby-irb'; \
+    apk add --no-cache ruby less && \
+    apk add --no-cache $DEPS && \
+    gem install supply:$SUPPLY_VERSION json && \
+    apk del --no-cache $DEPS
+
+CMD ["supply"]
